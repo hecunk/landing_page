@@ -8,9 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .obizh-banner {
+            position: absolute;
+            color: blue;
+            background: red;
+            width: 100%;
+            height: 100%;
+        }
+    </style
 </head>
 <body>
-    <div class="body">
+    <div id="obizh-banner" style="display: none" class="obizh-banner">
+        <h1 style="padding: auto; margin: auto;">Обиж активирован!</h1>
+    </div>
+
+    <div id="body" class="body">
         <div class="header-container">
         <div class="right-container">
             <div class="logo">Header Logo</div>
@@ -23,7 +36,7 @@
         <div class="left-container">
             <div class="header-links">
                 <a href="">header link one</a>
-                <a href="">header link two</a>            
+                <a href="">header link two</a>
                 <a href="">header link three</a>
             </div>
             <div class="upper-image">
@@ -32,40 +45,40 @@
         </div>
         </div>
         <div class="second-container">
-            <div class="images-title">Some random information</div>
+            <div class="images-title">Вы хотите в циву?</div>
             <div class="list-of-images">
                 <div class="block">
                     <div class="image-block"><img src="" alt=""></div>
-                    <div class="block-text">this is some subtext under an illustration or image</div>
+                    <div class="block-text">Честно сказать?</div>
                 </div>
                 <div class="block">
                     <div class="image-block"><img src="" alt=""></div>
-                    <div class="block-text">this is some subtext under an illustration or image</div>
+                    <div class="block-text">ну я не очень хочу</div>
                 </div>
                 <div class="block">
                     <div class="image-block"><img src="" alt=""></div>
-                    <div class="block-text">this is some subtext under an illustration or image</div>
+                    <div class="block-text">Ну и все! Я с вами ни во что не хочу!</div>
                 </div>
                 <div class="block">
                     <div class="image-block"><img src="" alt=""></div>
-                    <div class="block-text">this is some subtext under an illustration or image</div>
+                    <div class="block-text">Ну почему??? Я же просто хочу в циву поиграть....</div>
                 </div>
             </div>
         </div>
         <div class="third-container">
             <div class="additional-container">
-            <div class="quote-text">This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.</div>
-            <div class="author-text">-Thor, God of Thunder</div>
+            <div class="quote-text">Это моя цитата. Я очень люблю эту цитату</div>
+            <div class="author-text">- Тот, кто не был обижем, никогда не сможет его врубить</div>
             </div>
         </div>
         <div class="fourth-container">
             <div class="blue-container">
                 <div class="call-text-container">
-                    <div class="call-title">Call to action! It's time!</div>
-                    <div class="sign-up-text">Sign up for our product by clicking that button right over there!</div>
+                    <div class="call-title">Врубить обижа?</div>
+                    <div class="sign-up-text">Нажмите на эту кнопку чтобы врубить обижа</div>
                 </div>
                 <div class="call-button">
-                    <button>Sign up</button>
+                    <button id="obizh">ОБИЖ</button>
                 </div>
             </div>
         </div>
@@ -73,5 +86,18 @@
             <div class="footer-text">Copyright © The Odin Project 2021</div>
         </div>
     </div>
+    <script>
+        let list = Array.from(document.getElementsByTagName("button"))
+        list.forEach((el) => {
+            el.addEventListener('click', () => {
+                document.getElementById('body').style = 'display: none;'
+                document.getElementById('obizh-banner').style = 'display: block;'
+                setTimeout(() => {
+                    document.getElementById('obizh-banner').style = 'display: none;'
+                    document.getElementById('body').style = 'display: block;'
+                }, 1000)
+            })
+        })
+    </script>
 </body>
 </html>
